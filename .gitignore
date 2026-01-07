@@ -41,3 +41,10 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Frontend
+/frontend/web/node_modules/
+/frontend/web/dist/
+/frontend/web/.angular/
+/frontend/web/.cache/
+/frontend/web/coverage/
