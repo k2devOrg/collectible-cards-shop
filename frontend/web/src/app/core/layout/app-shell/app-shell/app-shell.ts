@@ -7,7 +7,7 @@ import {HeaderComponent} from '../../header/header/header';
   standalone: true,
   imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app-shell.html',
-  styleUrl: './app-shell.css',
+  styleUrls: ['./app-shell.css'],
 })
 export class AppShellComponent {
 
