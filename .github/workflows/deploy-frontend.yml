@@ -1,0 +1,21 @@
+name: SSH Test to VPS
+
+on:
+  workflow_dispatch:   # uruchamiany ręcznie
+
+jobs:
+  ssh_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH into VPS and run basic commands
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            whoami
+            pwd
+            ls -la
