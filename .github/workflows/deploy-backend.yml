@@ -1,0 +1,14 @@
+name: Build & Deploy Backend
+
+on:
+  push:
+    branches: ["develop"]
+    paths:
+      - "backend/**"
+      - ".github/workflows/deploy-backend.yml"
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Backend deploy will be added here"

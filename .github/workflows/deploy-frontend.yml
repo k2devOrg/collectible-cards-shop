@@ -3,6 +3,9 @@ name: Build & Deploy Frontend
 on:
   push:
     branches: ["develop"]
+    paths:
+      - "frontend/**"
+      - ".github/workflows/deploy-frontend.yml"
 
 jobs:
   build_and_push:
