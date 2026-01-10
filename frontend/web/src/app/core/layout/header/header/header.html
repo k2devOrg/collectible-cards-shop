@@ -1,0 +1,72 @@
+<header class="bg-black text-white sticky top-0 md:relative z-50">
+  <div class="grid grid-cols-2 md:grid-cols-3 items-center max-w-7xl mx-auto px-4 md:px-6 py-5 md:py-5">
+    <div class="font-semibold tracking-wide text-base md:text-lg">Dobre Mordy</div>
+    <div class="hidden md:block"></div>
+    <div class="hidden md:flex justify-self-end items-center gap-4">
+      <a routerLink="/shop" class=" text-sm md:text-base hover:opacity-80 transition duration-300">Sklep</a>
+      <a routerLink="/shop" class=" text-sm text-white/70 hover:text-white md:text-base hover:opacity-80 transition duration-300">Zaloguj się</a>
+      <a routerLink="/shop"
+         class="text-sm p-1 md:text-base rounded-md hover:opacity-80 transition duration-300 border border-white/25 hover:border-white hover:bg-white hover:text-black">
+        Zarejestruj się
+      </a>
+    </div>
+    <button
+      (click)="toggleMobileMenu()"
+      class="md:hidden justify-self-end flex flex-col gap-1"
+      aria-label="Menu"
+      [attr.aria-expanded]="isMenuOpen()"
+    >
+      <span class="block w-6 h-0.5 bg-white transition-all origin-center duration-300 ease-out"
+            [class.rotate-45]="isMenuOpen()"
+            [class.translate-y-1]="isMenuOpen()"
+      ></span>
+      <span class="block w-6 h-0.5 bg-white transition-all origin-center duration-300 ease-out"
+            [class.opacity-0]="isMenuOpen()"
+      ></span>
+      <span class="block w-6 h-0.5 bg-white transition-all origin-center duration-300 ease-out"
+            [class.-rotate-45]="isMenuOpen()"
+            [class.-translate-y-2]="isMenuOpen()"
+      ></span>
+    </button>
+  </div>
+
+</header>
+  <!-- MOBILE MENU -->
+  @if (isMenuOpen()) {
+  <div
+    class="md:hidden fixed top-16 left-0 right-0 bg-black border-t border-white/10 transition-all duration-300 ease-out z-40"
+    [class.opacity-100]="isMenuVisible()"
+    [class.translate-y-0]="isMenuVisible()"
+    [class.opacity-0]="!isMenuVisible()"
+    [class.-translate-y-2]="!isMenuVisible()"
+  >
+    <nav class="grid grid-cols-1 gap-4 px-4 py-6">
+      <a (click)="closeMobileMenu()" class="font-medium text-white hover:opacity-80 transition">
+        Sklep
+      </a>
+
+      <div class="h-px bg-white/10"></div>
+      <a (click)="closeMobileMenu()" class="font-medium text-white/70 hover:opacity-80 transition">
+        Zaloguj się
+      </a>
+      <a (click)="closeMobileMenu()" class="text-white over:opacity-80 transition">
+        Zarejestruj się
+      </a>
+
+<!--      <div class="h-px bg-white/10"></div>-->
+
+
+<!--      <a (click)="closeMobileMenu()" class="text-white/80 text-sm hover:opacity-80 transition">-->
+<!--        Moje konto-->
+<!--      </a>-->
+<!--      <a (click)="closeMobileMenu()" class="text-white/80 text-sm hover:opacity-80 transition">-->
+<!--        Koszyk-->
+<!--      </a>-->
+    </nav>
+  </div>
+
+  <!-- BACKDROP -->
+  <div (click)="closeMobileMenu()" class="fixed inset-0 bg-black opacity-60 z-30">
+
+  </div>
+  }

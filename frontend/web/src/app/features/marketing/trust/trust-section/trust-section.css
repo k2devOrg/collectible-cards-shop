@@ -1,0 +1,7 @@
+section {
+  opacity: 0;
+}
+
+section.is-revealed {
+  opacity: 1;
+}
