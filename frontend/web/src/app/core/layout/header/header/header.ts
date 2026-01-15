@@ -1,5 +1,6 @@
-import {Component, computed, signal} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {RouterLink} from '@angular/router';
+import {AuthService} from '../../../auth/authService';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,9 @@ import {RouterLink} from '@angular/router';
 export class HeaderComponent {
   isMenuOpen = signal<boolean>(false);
   isMenuVisible = signal<boolean>(false);
+
+  authService: AuthService = inject(AuthService);
+  isLoggedIn = this.authService.isLoggedIn
 
   toggleMobileMenu() {
     if (this.isMenuOpen()) {
