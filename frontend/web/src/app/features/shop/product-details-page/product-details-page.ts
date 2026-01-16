@@ -1,29 +1,28 @@
 import {Component, inject} from '@angular/core';
+import {ActivatedRoute, RouterLink} from '@angular/router';
+import {Product} from '../models/product';
 import {RevealOnScroll} from '../../../shared/directives/reveal-on-scroll';
-import {ProductCardComponent} from '../product-card/product-card';
-import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-shop-page',
+  selector: 'app-product-details-page',
   standalone: true,
   imports: [
     RevealOnScroll,
-    ProductCardComponent
+    RouterLink
   ],
-  templateUrl: './shop-page.html',
-  styleUrls: ['./shop-page.css'],
+  templateUrl: './product-details-page.html',
+  styleUrls: ['./product-details-page.css'],
 })
-export class ShopPageComponent {
+export class ProductDetailsPageComponent {
 
-  router = inject(Router);
-  onProductClicked(id: string | number) {
-    this.router.navigate(['/shop', id]);
-  }
+  private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
+  productIdUrl: string | null = this.activatedRoute.snapshot.paramMap.get('id');
   productList = [
     {
       id: 1,
       imgUrl: "https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-01.jpg",
       title: 'To jest karta pokemon',
+      category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
     },
@@ -31,6 +30,7 @@ export class ShopPageComponent {
       id: 2,
       imgUrl: "https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-02.jpg",
       title: 'To jest karta pokemon',
+      category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
     },
@@ -38,6 +38,7 @@ export class ShopPageComponent {
       id: 3,
       imgUrl: "https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-03.jpg",
       title: 'To jest karta pokemon',
+      category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
     },
@@ -45,6 +46,7 @@ export class ShopPageComponent {
       id: 4,
       imgUrl: "https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-04.jpg",
       title: 'To jest karta pokemon',
+      category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
     },
@@ -52,6 +54,7 @@ export class ShopPageComponent {
       id: 5,
       imgUrl: "https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-05.jpg",
       title: 'To jest karta pokemon',
+      category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
     },
@@ -59,6 +62,7 @@ export class ShopPageComponent {
       id: 6,
       imgUrl: "https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-06.jpg",
       title: 'To jest karta pokemon',
+      category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
     },
@@ -66,6 +70,7 @@ export class ShopPageComponent {
       id: 7,
       imgUrl: "https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-07.jpg",
       title: 'To jest karta pokemon',
+      category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
     },
@@ -73,8 +78,11 @@ export class ShopPageComponent {
       id: 8,
       imgUrl: "https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-08.jpg",
       title: 'To jest karta pokemon',
+      category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
     },
   ]
+  productId: number | null = Number(this.productIdUrl);
+  product?: Product = this.productList.find(p => p.id === this.productId);
 }
