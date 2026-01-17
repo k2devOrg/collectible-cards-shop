@@ -14,32 +14,53 @@
       <a routerLink="/shop" class=" text-sm text-white/70 hover:text-white md:text-base hover:opacity-80 transition duration-300">Moje Konto</a>
       <a routerLink="/shop" class=" text-sm text-white/70 hover:text-white md:text-base hover:opacity-80 transition duration-300">Wyloguj się</a>
       }
-       <a routerLink="/shop"
-       class="text-sm md:text-base hover:opacity-80 transition duration-300">
-      Koszyk
-    </a>
+      <div class="flow-root ml-2">
+        <a routerLink="/shop" class="group -m-2 flex items-center p-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 shrink-0 text-white hover:opacity-80 transition duration-300">
+            <path d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          @if (cartService.totalItems() > 0) {
+            <span class="ml-2 text-sm font-medium text-white">{{ cartService.totalItems() }}</span>
+          }
+          <span class="sr-only">items in cart, view bag</span>
+        </a>
+      </div>
     </div>
-    <button
-      (click)="toggleMobileMenu()"
-      class="md:hidden justify-self-end flex flex-col gap-1"
-      aria-label="Menu"
-      [attr.aria-expanded]="isMenuOpen()"
-    >
+    <div class="md:hidden justify-self-end flex items-center gap-4">
+      <div class="flow-root ml-2">
+        <a routerLink="/shop" class="group -m-2 flex items-center p-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 shrink-0 text-white hover:opacity-80 transition duration-300">
+            <path d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          @if (cartService.totalItems() > 0) {
+            <span class="ml-2 text-sm font-medium text-white">{{ cartService.totalItems() }}</span>
+          }
+          <span class="sr-only">items in cart, view bag</span>
+        </a>
+      </div>
+      <button
+        (click)="toggleMobileMenu()"
+        class="md:hidden justify-self-end flex flex-col gap-1"
+        aria-label="Menu"
+        [attr.aria-expanded]="isMenuOpen()"
+      >
       <span class="block w-6 h-0.5 bg-white transition-all origin-center duration-300 ease-out"
             [class.rotate-45]="isMenuOpen()"
             [class.translate-y-1]="isMenuOpen()"
       ></span>
-      <span class="block w-6 h-0.5 bg-white transition-all origin-center duration-300 ease-out"
-            [class.opacity-0]="isMenuOpen()"
-      ></span>
-      <span class="block w-6 h-0.5 bg-white transition-all origin-center duration-300 ease-out"
-            [class.-rotate-45]="isMenuOpen()"
-            [class.-translate-y-2]="isMenuOpen()"
-      ></span>
-    </button>
+        <span class="block w-6 h-0.5 bg-white transition-all origin-center duration-300 ease-out"
+              [class.opacity-0]="isMenuOpen()"
+        ></span>
+        <span class="block w-6 h-0.5 bg-white transition-all origin-center duration-300 ease-out"
+              [class.-rotate-45]="isMenuOpen()"
+              [class.-translate-y-2]="isMenuOpen()"
+        ></span>
+      </button>
+    </div>
   </div>
 
 </header>
+
   <!-- MOBILE MENU -->
   @if (isMenuOpen()) {
   <div
