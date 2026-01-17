@@ -1,25 +1,40 @@
-import {computed, Injectable, signal} from '@angular/core';
+import {computed, effect, Injectable, signal} from '@angular/core';
 import {CartItem} from '../../features/shop/models/cart-item';
 import {Product} from '../../features/shop/models/product';
+
+const CART_STORAGE_KEY = 'cart_items';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
 
-  readonly items = signal<CartItem[]>([]);
+  private readonly items = signal<CartItem[]>([]);
+  readonly cartItems = this.items.asReadonly();
 
-  totalItems = computed(() => {
-    return this.items().reduce((sum, item) => {
-      return sum + item.quantity;
-    }, 0);
-  })
-  totalPrice = computed(() => {
-    return this.items().reduce((sum, item) => {
-      return sum + item.quantity * item.price;
+  totalItems = computed(() =>
+    this.cartItems().reduce((sum, item) => sum + item.quantity, 0)
+  );
 
-    }, 0);
-  })
+  totalPrice = computed(() =>
+    this.cartItems().reduce((sum, item) => sum + item.quantity * item.price, 0)
+  );
+
+  constructor() {
+    const stored = localStorage.getItem(CART_STORAGE_KEY);
+
+    if (stored) {
+      try {
+        this.items.set(JSON.parse(stored) as CartItem[]);
+      } catch {
+        localStorage.removeItem(CART_STORAGE_KEY);
+      }
+    }
+
+    effect(() => {
+      this.saveToStorage(this.items());
+    });
+  }
 
   add(product: Product) {
     this.items.update(items => {
@@ -69,5 +84,9 @@ export class CartService {
 
   clear() {
     this.items.set([]);
+  }
+
+  private saveToStorage(items: CartItem[]) {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
   }
 }

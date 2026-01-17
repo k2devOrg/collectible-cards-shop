@@ -17,7 +17,7 @@ export class ShopPageComponent {
 
   router = inject(Router);
   onProductClicked(id: string | number) {
-    this.router.navigate(['/shop', id]);
+    this.router.navigate(['/shop/product', id]);
   }
   productList = [
     {

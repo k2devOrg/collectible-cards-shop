@@ -8,9 +8,15 @@ export const shopRoutes: Routes = [
         .then(m => m.ShopPageComponent),
   },
   {
-    path: ':id',
+    path: 'cart',
+    loadComponent: () =>
+      import('../cart/cart-page/cart-page')
+        .then(m => m.CartPageComponent),
+  },
+  {
+    path: 'product/:id',
     loadComponent: () =>
       import('./product-details-page/product-details-page')
         .then(m => m.ProductDetailsPageComponent),
   }
-]
+];

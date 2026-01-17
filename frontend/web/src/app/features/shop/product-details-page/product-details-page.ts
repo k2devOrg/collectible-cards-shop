@@ -2,6 +2,7 @@ import {Component, inject} from '@angular/core';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {Product} from '../models/product';
 import {RevealOnScroll} from '../../../shared/directives/reveal-on-scroll';
+import {CartService} from '../../../core/cart/cart-service';
 
 @Component({
   selector: 'app-product-details-page',
@@ -15,6 +16,7 @@ import {RevealOnScroll} from '../../../shared/directives/reveal-on-scroll';
 })
 export class ProductDetailsPageComponent {
 
+  cartService: CartService = inject(CartService);
   private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
   productIdUrl: string | null = this.activatedRoute.snapshot.paramMap.get('id');
   productList = [
