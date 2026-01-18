@@ -27,6 +27,12 @@ export class ShopPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 2,
@@ -35,6 +41,12 @@ export class ShopPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 3,
@@ -43,6 +55,12 @@ export class ShopPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 4,
@@ -51,6 +69,12 @@ export class ShopPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 5,
@@ -59,6 +83,12 @@ export class ShopPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 6,
@@ -67,6 +97,12 @@ export class ShopPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 7,
@@ -75,6 +111,12 @@ export class ShopPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 8,
@@ -83,6 +125,12 @@ export class ShopPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
   ]
 }

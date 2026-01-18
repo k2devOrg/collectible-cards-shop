@@ -34,18 +34,37 @@
           <div class="w-full">
             <div class="aspect-square overflow-hidden rounded-lg bg-gray-100">
               <img
-                [src]="product.imgUrl"
+                [src]="product.images[activeImageIndex()]"
                 [alt]="product.title"
                 class="h-full w-full object-cover"
               />
             </div>
-          </div>
+            <div class="mt-4 grid grid-cols-4 gap-3">
+              @for (img of product.images; track $index) {
+                <button
+                  type="button"
+                  (click)="setActiveImage($index)"
+                  class="relative aspect-square overflow-hidden rounded-md border
+                        transition
+                        hover:opacity-80"
+                  [class.border-black]="activeImageIndex() === $index"
+                  [class.border-gray-200]="activeImageIndex() !== $index"
+                >
+                  <img
+                    [src]="img"
+                    alt=""
+                    class="h-full w-full object-cover"
+                  />
+                </button>
+                }
+                </div>
+              </div>
 
-          <!-- RIGHT: PRODUCT INFO -->
-          <div class="flex flex-col">
+              <!-- RIGHT: PRODUCT INFO -->
+              <div class="flex flex-col">
 
-            <!-- Title -->
-            <h1 class="text-3xl font-semibold tracking-tight text-gray-900">
+                <!-- Title -->
+                <h1 class="text-3xl font-semibold tracking-tight text-gray-900">
     {{ product.title }}
     </h1>
 
@@ -73,7 +92,7 @@
           <div class="mt-10">
             <button
               (click)="cartService.add(product)"
-              class="w-full rounded-md bg-gray-300 px-6 py-3 text-sm font-medium text-gray-700"
+              class="w-full rounded-md bg-black px-4 py-3 text-base font-medium text-white hover:bg-gray-900 transition"
             >
               Dodaj do koszyka
             </button>

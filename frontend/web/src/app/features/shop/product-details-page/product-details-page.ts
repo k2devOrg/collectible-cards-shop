@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {Product} from '../models/product';
 import {RevealOnScroll} from '../../../shared/directives/reveal-on-scroll';
@@ -19,6 +19,7 @@ export class ProductDetailsPageComponent {
   cartService: CartService = inject(CartService);
   private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
   productIdUrl: string | null = this.activatedRoute.snapshot.paramMap.get('id');
+  activeImageIndex = signal(0);
   productList = [
     {
       id: 1,
@@ -27,6 +28,10 @@ export class ProductDetailsPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-01.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+      ]
     },
     {
       id: 2,
@@ -35,6 +40,12 @@ export class ProductDetailsPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 3,
@@ -43,6 +54,12 @@ export class ProductDetailsPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 4,
@@ -51,6 +68,12 @@ export class ProductDetailsPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-04.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 5,
@@ -59,6 +82,12 @@ export class ProductDetailsPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-05.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 6,
@@ -67,6 +96,12 @@ export class ProductDetailsPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-07-product-06.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 7,
@@ -75,6 +110,12 @@ export class ProductDetailsPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-01.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
     {
       id: 8,
@@ -83,8 +124,17 @@ export class ProductDetailsPageComponent {
       category: 'Pokemon',
       subTitle: 'PokemonCard',
       price: 10,
+      images: [
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-01.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-02.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-03.jpg',
+        'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-03-product-04.jpg',
+      ]
     },
   ]
   productId: number | null = Number(this.productIdUrl);
   product?: Product = this.productList.find(p => p.id === this.productId);
+  setActiveImage(index: number) {
+    this.activeImageIndex.set(index);
+  }
 }
