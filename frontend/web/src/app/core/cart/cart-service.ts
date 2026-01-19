@@ -1,6 +1,7 @@
-import {computed, effect, Injectable, signal} from '@angular/core';
+import {computed, effect, inject, Injectable, signal} from '@angular/core';
 import {CartItem} from '../../features/shop/models/cart-item';
 import {Product} from '../../features/shop/models/product';
+import {ModalService} from '../modal/modal-service';
 
 const CART_STORAGE_KEY = 'cart_items';
 
@@ -9,6 +10,7 @@ const CART_STORAGE_KEY = 'cart_items';
 })
 export class CartService {
 
+  protected modalService: ModalService = inject(ModalService);
   private readonly items = signal<CartItem[]>([]);
   readonly cartItems = this.items.asReadonly();
 
@@ -56,6 +58,12 @@ export class CartService {
           : item
       );
     });
+    this.modalService.open('ADD_TO_CART', {
+      title: product.title,
+      price: product.price,
+      imgUrl: product.imgUrl,
+      quantity: 1,
+    })
   }
 
   remove(productId: number) {
