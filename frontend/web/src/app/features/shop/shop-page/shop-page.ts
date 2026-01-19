@@ -2,13 +2,15 @@ import {Component, inject} from '@angular/core';
 import {RevealOnScroll} from '../../../shared/directives/reveal-on-scroll';
 import {ProductCardComponent} from '../product-card/product-card';
 import {Router} from '@angular/router';
+import {ShopHeaderComponent} from '../shop-header/shop-header';
 
 @Component({
   selector: 'app-shop-page',
   standalone: true,
   imports: [
     RevealOnScroll,
-    ProductCardComponent
+    ProductCardComponent,
+    ShopHeaderComponent
   ],
   templateUrl: './shop-page.html',
   styleUrls: ['./shop-page.css'],
