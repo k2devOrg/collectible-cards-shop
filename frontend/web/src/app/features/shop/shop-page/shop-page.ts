@@ -3,6 +3,7 @@ import {RevealOnScroll} from '../../../shared/directives/reveal-on-scroll';
 import {ProductCardComponent} from '../product-card/product-card';
 import {Router} from '@angular/router';
 import {ShopHeaderComponent} from '../shop-header/shop-header';
+import {ShopToolbarComponent} from '../shop-toolbar/shop-toolbar';
 
 @Component({
   selector: 'app-shop-page',
@@ -10,7 +11,8 @@ import {ShopHeaderComponent} from '../shop-header/shop-header';
   imports: [
     RevealOnScroll,
     ProductCardComponent,
-    ShopHeaderComponent
+    ShopHeaderComponent,
+    ShopToolbarComponent
   ],
   templateUrl: './shop-page.html',
   styleUrls: ['./shop-page.css'],

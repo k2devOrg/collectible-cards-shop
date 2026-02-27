@@ -9,7 +9,6 @@ import {RouterLink} from '@angular/router';
     RouterLink
   ],
   templateUrl: './add-to-cart-modal.html',
-  styleUrl: './add-to-cart-modal.css',
 })
 export class AddToCartModalComponent implements AfterViewInit {
   protected modalService: ModalService = inject(ModalService);

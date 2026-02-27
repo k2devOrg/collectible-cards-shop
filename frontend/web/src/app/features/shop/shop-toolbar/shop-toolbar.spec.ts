@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddToCartModal } from './add-to-cart-modal';
+import { ShopToolbar } from './shop-toolbar';
 
-describe('AddToCartModal', () => {
-  let component: AddToCartModal;
-  let fixture: ComponentFixture<AddToCartModal>;
+describe('ShopToolbar', () => {
+  let component: ShopToolbar;
+  let fixture: ComponentFixture<ShopToolbar>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddToCartModal]
+      imports: [ShopToolbar]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AddToCartModal);
+    fixture = TestBed.createComponent(ShopToolbar);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
