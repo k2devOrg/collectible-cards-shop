@@ -81,7 +81,7 @@
     [class.-translate-y-2]="!isMenuVisible()"
   >
     <nav class="grid grid-cols-1 gap-4 px-4 py-6">
-      <a (click)="closeMobileMenu()" class="font-medium text-white hover:opacity-80 transition">
+      <a (click)="closeMobileMenu()" [routerLink]="['/shop']" class="font-medium text-white hover:opacity-80 transition">
         Sklep
       </a>
     @if(!authService.isLoggedIn()) {
@@ -107,7 +107,7 @@
         Wyloguj się
       </a>
       }
-      <a (click)="closeMobileMenu()" class="text-white/80 text-sm hover:opacity-80 transition">
+      <a (click)="closeMobileMenu()" [routerLink]="['shop/cart']" class="text-white/80 text-sm hover:opacity-80 transition">
         Koszyk
       </a>
 
