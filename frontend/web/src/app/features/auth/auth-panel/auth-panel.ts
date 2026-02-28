@@ -56,6 +56,18 @@ export class AuthPanelComponent {
       : 'opacity-100 translate-x-6 pointer-events-auto'
   );
 
+  readonly mobileSignInClass = computed(() =>
+    this.isSignUp()
+      ? 'opacity-0 translate-x-2 pointer-events-none'
+      : 'opacity-100 translate-x-0 pointer-events-auto'
+  );
+
+  readonly mobileSignUpClass = computed(() =>
+    this.isSignUp()
+      ? 'opacity-100 translate-x-0 pointer-events-auto'
+      : 'opacity-0 -translate-x-2 pointer-events-none'
+  );
+
   toggleMode() {
     const next: QueryMode = this.isSignUp() ? 'register' : 'login';
 
