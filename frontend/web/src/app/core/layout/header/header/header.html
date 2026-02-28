@@ -5,11 +5,21 @@
     <div class="hidden md:flex justify-self-end items-center gap-4">
       <a routerLink="/shop" class="text-sm md:text-base hover:opacity-80 transition duration-300">Sklep</a>
       @if(!authService.isLoggedIn()) {
-      <a routerLink="/shop" class=" text-sm text-white/70 hover:text-white md:text-base hover:opacity-80 transition duration-300">Zaloguj się</a>
-      <a routerLink="/shop"
-         class="text-sm p-1 md:text-base rounded-md hover:opacity-80 transition duration-300 border border-white/25 hover:border-white hover:bg-white hover:text-black">
-        Zarejestruj się
-      </a>
+      <a
+  [routerLink]="['/auth']"
+  [queryParams]="{ mode: 'login' }"
+  class="text-sm text-white/70 hover:text-white md:text-base hover:opacity-80 transition duration-300"
+>
+  Zaloguj się
+</a>
+
+<a
+  [routerLink]="['/auth']"
+  [queryParams]="{ mode: 'register' }"
+  class="text-sm p-1 md:text-base rounded-md hover:opacity-80 transition duration-300 border border-white/25 hover:border-white hover:bg-white hover:text-black"
+>
+  Zarejestruj się
+</a>
       } @else {
       <a routerLink="/shop" class=" text-sm text-white/70 hover:text-white md:text-base hover:opacity-80 transition duration-300">Moje Konto</a>
       <a routerLink="/shop" class=" text-sm text-white/70 hover:text-white md:text-base hover:opacity-80 transition duration-300">Wyloguj się</a>
