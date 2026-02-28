@@ -86,10 +86,14 @@
       </a>
     @if(!authService.isLoggedIn()) {
       <div class="h-px bg-white/10"></div>
-      <a (click)="closeMobileMenu()" class="font-medium text-white/70 hover:opacity-80 transition">
+      <a [routerLink]="['/auth']"
+         [queryParams]="{ mode: 'login' }"
+         (click)="closeMobileMenu()" class="font-medium text-white/70 hover:opacity-80 transition">
         Zaloguj się
       </a>
-      <a (click)="closeMobileMenu()" class="text-white over:opacity-80 transition">
+      <a [routerLink]="['/auth']"
+         [queryParams]="{ mode: 'register' }"
+         (click)="closeMobileMenu()" class="text-white over:opacity-80 transition">
         Zarejestruj się
       </a>
     } @else {
