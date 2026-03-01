@@ -58,14 +58,14 @@ export class AuthPanelComponent {
 
   readonly mobileSignInClass = computed(() =>
     this.isSignUp()
-      ? 'opacity-0 translate-x-2 pointer-events-none'
-      : 'opacity-100 translate-x-0 pointer-events-auto'
+      ? 'opacity-100 translate-x-0 pointer-events-auto'
+      : 'opacity-0 translate-x-2 pointer-events-none'
   );
 
   readonly mobileSignUpClass = computed(() =>
     this.isSignUp()
-      ? 'opacity-100 translate-x-0 pointer-events-auto'
-      : 'opacity-0 -translate-x-2 pointer-events-none'
+      ? 'opacity-0 -translate-x-2 pointer-events-none'
+      : 'opacity-100 translate-x-0 pointer-events-auto'
   );
 
   toggleMode() {
