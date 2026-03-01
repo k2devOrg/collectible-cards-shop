@@ -1,0 +1,16 @@
+<section class="">
+
+  <div class="bg-white">
+    <div class="mx-auto max-w-screen-xl overflow-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8">
+        @for(productCard of productList; track productCard.id) {
+        <app-product-card
+        [product]=productCard
+        (clicked)="onProductClicked($event)">
+        </app-product-card>
+        }
+      </div>
+    </div>
+  </div>
+
+</section>
