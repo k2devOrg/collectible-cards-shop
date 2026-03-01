@@ -1,5 +1,4 @@
 import {Component, inject} from '@angular/core';
-import {RevealOnScroll} from '../../../shared/directives/reveal-on-scroll';
 import {ShopHeaderComponent} from '../shop-header/shop-header';
 import {ShopToolbarComponent} from '../shop-toolbar/shop-toolbar';
 import {ProductGridComponent} from '../product-grid/product-grid';
@@ -9,7 +8,6 @@ import {PaginationComponent} from '../pagination/pagination';
   selector: 'app-shop-page',
   standalone: true,
   imports: [
-    RevealOnScroll,
     ShopHeaderComponent,
     ShopToolbarComponent,
     ProductGridComponent,
